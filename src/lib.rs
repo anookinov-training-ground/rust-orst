@@ -12,7 +12,7 @@ where
     S::sort(slice)
 }
 
-// mod bubblesort;
+mod bubblesort;
 
 #[cfg(test)]
 mod tests {
