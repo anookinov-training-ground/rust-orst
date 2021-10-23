@@ -22,7 +22,7 @@ impl Sorter for Bubblesort {
 
 #[test]
 fn it_works() {
-    let mut things = vec![4, 2, 3, 1];
+    let mut things = vec![4, 2, 5, 3, 1];
     super::sort::<_, Bubblesort>(&mut things);
-    assert_eq!(things, &[1, 2, 3, 4]);
+    assert_eq!(things, &[1, 2, 3, 4, 5]);
 }
