@@ -9,12 +9,12 @@ impl Sorter for SelectionSort {
     {
         // [ sorted | not sorted ]
         for unsorted in 0..slice.len() {
-            let (smallest_in_rest, _) = slice[unsorted..]
+            let smallest_in_rest = slice[unsorted..]
                 .iter()
                 .enumerate()
                 .min_by_key(|&(_, v)| v)
+                .map(|(i, _)| unsorted + i)
                 .expect("slice is non-empty");
-            let smallest_in_rest = unsorted + smallest_in_rest;
 
             // or
 
