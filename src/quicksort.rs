@@ -24,11 +24,19 @@ fn quicksort<T: Ord>(slice: &mut [T]) {
         } else if &rest[right] > pivot {
             // right already on the correct side
             // avoid unnecessary swaps back and forth
+            if right == 0 {
+                // we must be done
+                break;
+            }
             right -= 1;
         } else {
             // left holds a right, and right holds a left, swap them.
             rest.swap(left, right);
             left += 1;
+            if right == 0 {
+                // we must be done
+                break;
+            }
             right -= 1;
         }
     }
